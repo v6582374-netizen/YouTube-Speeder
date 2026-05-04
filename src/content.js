@@ -190,36 +190,16 @@
 
   function createOverlay() {
     const overlay = document.createElement("div");
-    const core = document.createElement("div");
-    const rate = document.createElement("span");
-    const label = document.createElement("span");
-    const motion = document.createElement("div");
 
     overlay.id = OVERLAY_ID;
     overlay.setAttribute("aria-hidden", "true");
-
-    core.className = "speeder-overlay-core";
-    rate.className = "speeder-overlay-rate";
-    label.className = "speeder-overlay-label";
-    motion.className = "speeder-overlay-motion";
-
-    label.textContent = "快进";
-
-    for (let index = 0; index < 3; index += 1) {
-      const chevron = document.createElement("span");
-      motion.appendChild(chevron);
-    }
-
-    core.append(rate, label);
-    overlay.append(core, motion);
 
     return overlay;
   }
 
   function updateOverlayRate(overlay = document.getElementById(OVERLAY_ID)) {
-    const rate = overlay?.querySelector(".speeder-overlay-rate");
-    if (rate) {
-      rate.textContent = `${settings.fastRate}x`;
+    if (overlay) {
+      overlay.textContent = `${settings.fastRate}x`;
     }
   }
 
