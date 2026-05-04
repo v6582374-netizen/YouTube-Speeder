@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Speeder",
+  "version": "0.1.0",
+  "description": "Hold ArrowRight on YouTube to temporarily fast-forward at 3x speed.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
