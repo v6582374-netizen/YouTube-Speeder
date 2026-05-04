@@ -2,13 +2,39 @@
   "manifest_version": 3,
   "name": "Speeder",
   "version": "0.1.0",
-  "description": "Hold ArrowRight on YouTube to temporarily fast-forward at 3x speed.",
+  "description": "Hold ArrowRight on YouTube to fast-forward and keep playback at the best display-matched quality.",
+  "permissions": ["storage", "system.display"],
+  "action": {
+    "default_title": "Speeder",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
       "js": ["src/content.js"],
       "css": ["src/styles.css"],
       "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/page-quality.js"],
+      "matches": ["https://www.youtube.com/*"]
     }
   ]
 }

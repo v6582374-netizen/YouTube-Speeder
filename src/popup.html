@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Speeder</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="popup-header">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="../assets/icons/icon-32.png" alt="">
+        </div>
+        <div>
+          <h1>Speeder</h1>
+          <p>长按右方向键</p>
+        </div>
+      </header>
+
+      <section class="setting-group" aria-labelledby="speed-title">
+        <div class="section-heading">
+          <h2 id="speed-title">倍速</h2>
+          <span id="speed-value">3x</span>
+        </div>
+        <div class="speed-options" role="radiogroup" aria-labelledby="speed-title">
+          <button type="button" class="speed-option" data-rate="1.5" role="radio">1.5x</button>
+          <button type="button" class="speed-option" data-rate="2" role="radio">2x</button>
+          <button type="button" class="speed-option" data-rate="3" role="radio">3x</button>
+        </div>
+      </section>
+
+      <section class="setting-row">
+        <div>
+          <h2>最高画质</h2>
+          <p>按显示屏能力固定最高可用画质</p>
+        </div>
+        <button type="button" id="quality-toggle" class="switch" role="switch" aria-checked="true" aria-label="最高画质">
+          <span></span>
+        </button>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
